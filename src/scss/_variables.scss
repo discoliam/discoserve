@@ -1,9 +1,10 @@
-// Breakpoints
-$bp-narrow: "(min-width: 400px)";
-$bp-mid: "(min-width: 740px)";
-$bp-wide: "(min-width: 1200px)";
-
-// Colours
-$page-color: #067ada;
-$text-color: #fff;
-$accent-color: #222;
+// Variables
+:root {
+  --body: #333;
+  --background: #eee;
+  --link: #15e;
+  --hover: #038;
+  --hover-background: #cdf;
+  --size: #888;
+  --img-size: 24px;
+}

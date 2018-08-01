@@ -31,6 +31,7 @@
     "gulp-shell": "^0.6.5",
     "gulp-uglify": "^3.0.0",
     "netlify-lambda": "^0.2.0",
+    "normalize.css": "^8.0.0",
     "pump": "^3.0.0",
     "require-dir": "^1.0.0"
   }

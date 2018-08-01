@@ -1,3 +1,3 @@
 # DiscoServe
 
-A static file list.
+A static file list

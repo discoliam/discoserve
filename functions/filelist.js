@@ -10,12 +10,20 @@ module.exports = function() {
   const length = children.length;
 
   // File Types
-  var fileTypes = ["README"];
   var textTypes = [".md"];
-  var scriptTypes = [".js", ".json", ".mjs", ".php", ".sh", ".bash"];
+  var scriptTypes = [".js", ".json", ".mjs", ".sh", ".bash"];
   var archiveTypes = [".zip", ".bin", ".tar", ".rar", ".tgz", ".7z"];
   var vectorTypes = [".ai", "svg", ".eps"];
-  var siteTypes = [".html", ".php", ".mustache", ".hbs", ".pug", ".jade"];
+  var siteTypes = [
+    ".html",
+    ".php",
+    ".mustache",
+    ".hbs",
+    ".pug",
+    ".jade",
+    ".liquid",
+    ".njk"
+  ];
   var stylesheetTypes = [".css", ".scss", ".sass", ".less"];
   var spreadsheetTypes = [".csv", ".xls", ".xslx", ".sql"];
   var codeTypes = [".jar", ".rb", ".py", ".c"];
@@ -49,26 +57,22 @@ module.exports = function() {
   }
 
   var i = 0;
-  var tableRow = "<tr>";
+  var tableRow = "<ul>";
   for (i = 0; i < length; i++) {
     var fileName = children[i]["name"],
       fileSize = filesize(children[i]["size"]).human(),
       fileExt = children[i]["extension"];
-
     tableRow +=
-      '<tr><td valign="top"><a href="/files/' +
+      '<li><a href="/files/' +
       fileName +
-      '" target="_blank"><img src="/images/icons/' +
+      '"><img src="/images/icons/' +
       getIcon(fileExt) +
-      '.svg" /></a></td><td><a href="/files/' +
+      '.svg" /><span class="name">' +
       fileName +
-      '" target="_blank">' +
-      fileName +
-      '</a></td><td align="right">' +
+      '</span><span class="size">' +
       fileSize +
-      "</td></tr>";
+      "</span></a></li>";
   }
-  tableRow += "</tr>";
-
+  tableRow += "</ul>";
   return tableRow;
 };

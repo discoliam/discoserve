@@ -52,18 +52,17 @@ module.exports = function() {
   var tableRow = "<tr>";
   for (i = 0; i < length; i++) {
     var fileName = children[i]["name"],
-      filePath = children[i]["path"],
       fileSize = filesize(children[i]["size"]).human(),
       fileExt = children[i]["extension"];
 
     tableRow +=
-      '<tr><td valign="top"><a href="' +
-      filePath +
-      '"><img src="/images/icons/' +
+      '<tr><td valign="top"><a href="/files/' +
+      fileName +
+      '" target="_blank"><img src="/images/icons/' +
       getIcon(fileExt) +
-      '.svg" /></a></td><td><a href="' +
-      filePath +
-      '">' +
+      '.svg" /></a></td><td><a href="/files/' +
+      fileName +
+      '" target="_blank">' +
       fileName +
       '</a></td><td align="right">' +
       fileSize +

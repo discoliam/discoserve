@@ -1,0 +1,22 @@
+---
+title: DiscoServe
+subtitle: A static file list.
+layout: layouts/base.liquid
+---
+
+<div class="container">
+  <h1>/{{ title }}/</h1>
+  <p>{{ subtitle }}</p>
+  <table>
+    <tbody>
+      <tr>
+        <th valign="top">
+        </th>
+        <th>Name</th>
+        <th>Size</th>
+      </tr>
+      {% fileList %}
+    </tbody>
+  </table>
+  <p>Built using <a href="https://www.11ty.io/">Eleventy</a>, styles based on <a href="https://github.com/desandro/windex">Windex</a>.</p>
+</div>
